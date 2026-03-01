@@ -1,0 +1,7 @@
+# --- Configuration pour l'export SVG avec Overleaf---
+
+# ruse pour transformer le DVI en SVG (nommé output.pdf pour tromper Overleaf)
+$dvipdf = "dvisvgm %S --no-fonts -o %D";
+
+
+# reste à télécharger output.pdf et le renommer en output.svg
