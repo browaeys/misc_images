@@ -1,0 +1,86 @@
+%\documentclass[border=0pt]{standalone}
+% pour du pdf
+\documentclass[dvisvgm,border=0pt]{standalone}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+% Définition de la fonction de densité
+\pgfmathdeclarefunction{densite}{1}{%
+  \pgfmathparse{1/(1+(#1/0.7)^2)}%
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+% --- GRAPHIQUE DU HAUT (F(x)) ---
+\begin{axis}[
+    name=topplot,
+    width=9cm, height=5cm,
+    axis lines=middle,
+    axis on top, 
+    ymin=0, ymax=1.1, 
+    xmin=-5, xmax=6,   
+    xtick={-4, -2, 0, 2, 4}, xticklabels={},
+    extra x ticks={0.8}, 
+    extra x tick labels={$\vphantom{bp}x$}, 
+    extra x tick style={
+        tick label style={anchor=north, yshift=-2pt},
+        tick style={black, thin} 
+    },
+    ytick={0.2, 0.4, 0.6, 0.8, 1.0}, yticklabels={},
+    tick align=center,
+    axis line style={-{Stealth}},
+    clip=false
+]
+    \addplot [fill=blue!20, draw=none, domain=-5:0.8, samples=500] {densite(x)} \closedcycle;
+    \addplot [thick, black, samples=1000, domain=-5:5.2] {densite(x)} 
+        node[right, pos=0.7, xshift=8pt, yshift=5pt] {$f(t)$}; 
+    
+    \draw [thin] (axis cs:0.8, 0) -- (axis cs:0.8, {densite(0.8)});
+    
+    % Retour à la position manuelle (axis cs)
+    \node (eq1) at (axis cs:-1.5, 1.3) {$\displaystyle F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t) \, dt$};
+    \draw [-{Stealth}, thin] (eq1.south) -- (axis cs:-1.0, 0.15); 
+\end{axis}
+
+% --- GRAPHIQUE DU BAS (P(a < X < b)) ---
+\begin{axis}[
+    at={($(topplot.south)-(0,2cm)$)}, 
+    anchor=north,
+    width=9cm, height=5cm,
+    axis lines=middle,
+    axis on top,
+    ymin=0, ymax=1.1, 
+    xmin=-5, xmax=6,   
+    xtick={-4, -2, 0, 2, 4}, xticklabels={},
+    extra x ticks={-0.8, 1.2}, 
+    extra x tick labels={$\vphantom{bp}a$, $\vphantom{bp}b$},
+    extra x tick style={
+        tick label style={anchor=north, yshift=-2pt},
+        tick style={black, thin} 
+    },
+    ytick={0.2, 0.4, 0.6, 0.8, 1.0}, yticklabels={},
+    tick align=center,
+    axis line style={-{Stealth}},
+    clip=false
+]
+    \addplot [fill=blue!20, draw=none, domain=-0.8:1.2, samples=500] {densite(x)} \closedcycle;
+    \addplot [thick, black, samples=1000, domain=-5:5.2] {densite(x)} 
+        node[right, pos=0.7, xshift=8pt, yshift=5pt] {$f(t)$}; 
+    
+    \draw [thin] (axis cs:-0.8, 0) -- (axis cs:-0.8, {densite(-0.8)});
+    \draw [thin] (axis cs:1.2, 0) -- (axis cs:1.2, {densite(1.2)});
+    
+    % Retour à la position manuelle (axis cs)
+    \node (eq2) at (axis cs:-1, 1.3) {$\displaystyle P(a < X \leq b) = F(b) - F(a) = \int_{a}^{b} f(t) \, dt$};
+    \draw [-{Stealth}, thin] (eq2.south) -- (axis cs:-0.3, 0.4);
+\end{axis}
+
+\end{tikzpicture}
+
+\end{document}
