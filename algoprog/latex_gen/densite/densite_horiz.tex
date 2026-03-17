@@ -7,6 +7,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{pgfplots}
+\usepackage{amssymb}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{arrows.meta, calc}
 
@@ -54,11 +55,11 @@
 ]
     \addplot [fill=blue!20, draw=none, domain=-5:0.8, samples=500] {densite(x)} \closedcycle;
     \addplot [thick, black, samples=1000, domain=-5:5.2] {densite(x)} 
-        node[right, pos=0.7, xshift=8pt, yshift=5pt] {$f(t)$}; % f(t) repositionné
+        node[right, pos=0.7, xshift=8pt, yshift=5pt] {$p_X(t)$}; % f(t) repositionné
     
     \draw [thin] (axis cs:0.8, 0) -- (axis cs:0.8, {densite(0.8)});
     
-    \node (eq1) at (axis cs:-1.5, 1.3) {$\displaystyle F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t) \, dt$};
+    \node (eq1) at (axis cs:-1.5, 1.3) {$\displaystyle F_X(x) = \mathbb{P}(X \leq x) = \int_{-\infty}^{x} p_X(t) \, dt$};
     \draw [-{Stealth}, thin] (eq1.south) -- (axis cs:-1.0, 0.15); 
 \end{axis}
 
@@ -85,12 +86,12 @@
 ]
     \addplot [fill=blue!20, draw=none, domain=-0.8:1.2, samples=500] {densite(x)} \closedcycle;
     \addplot [thick, black, samples=1000, domain=-5:5.2] {densite(x)} 
-        node[right, pos=0.7, xshift=8pt, yshift=5pt] {$f(t)$}; % f(t) repositionné
+        node[right, pos=0.7, xshift=8pt, yshift=5pt] {$p_X(x)$}; % f(t) repositionné
     
     \draw [thin] (axis cs:-0.8, 0) -- (axis cs:-0.8, {densite(-0.8)});
     \draw [thin] (axis cs:1.2, 0) -- (axis cs:1.2, {densite(1.2)});
     
-    \node (eq2) at (axis cs:-1, 1.3) {$\displaystyle P(a < X \leq b) = F(b) - F(a) = \int_{a}^{b} f(t) \, dt$};
+    \node (eq2) at (axis cs:-1, 1.3) {$\displaystyle \mathbb{P}(a < X \leq b) = F_X(b) - F_X(a) = \int_{a}^{b} p_X(x) \, dx$};
     \draw [-{Stealth}, thin] (eq2.south) -- (axis cs:-0.3, 0.4);
 \end{axis}
 
