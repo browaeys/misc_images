@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Temps de demi-montée dans le cas continu</title>
+  <desc id="desc">Une température continue croît de sa valeur initiale T zéro vers sa valeur finale T infini. Le niveau situé à mi-hauteur définit T un demi, et son intersection avec la courbe définit le temps t un demi.</desc>
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#20242a"/></marker>
+    <marker id="arrow-small" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#737b86"/></marker>
+    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.16"/></filter>
+  </defs>
+  <style>
+    .ui{font-family:Inter,Avenir,"Helvetica Neue",Arial,sans-serif;fill:#20242a}.math{font-family:"STIX Two Math","Cambria Math","Times New Roman",serif;fill:#20242a;font-style:italic}.axis-label{font-size:20px}.math-label{font-size:21px}.note{font-size:17px;fill:#505861}.equation{font-size:23px}.axis{stroke:#20242a;stroke-width:1.8;marker-end:url(#arrow)}.frame{fill:#fbfcfd;stroke:#d6dae0;stroke-width:1.2}.curve{fill:none;stroke:#3478c9;stroke-width:4;stroke-linecap:round}.base-line{stroke:#a5abb3;stroke-width:1.5;stroke-dasharray:6 7}.asymptote{stroke:#737b86;stroke-width:1.8;stroke-dasharray:8 7}.half-line{stroke:#b33a3a;stroke-width:2;stroke-dasharray:8 7}.time-line{stroke:#b33a3a;stroke-width:2;stroke-dasharray:8 7}.estimate{fill:#b33a3a;stroke:#fff;stroke-width:3;filter:url(#halo)}.rise{stroke:#737b86;stroke-width:1.4;marker-start:url(#arrow-small);marker-end:url(#arrow-small)}.leader{fill:none;stroke:#737b86;stroke-width:1.3}
+  </style>
+
+  <!-- Zone de tracé -->
+  <rect x="118" y="58" width="800" height="430" rx="2" class="frame"/>
+  <line x1="118" y1="488" x2="938" y2="488" class="axis"/>
+  <line x1="118" y1="488" x2="118" y2="38" class="axis"/>
+
+  <!-- Niveaux initial, final et demi-montée -->
+  <line x1="118" y1="418" x2="900" y2="418" class="base-line"/>
+  <line x1="118" y1="98" x2="900" y2="98" class="asymptote"/>
+  <line x1="118" y1="258" x2="304" y2="258" class="half-line"/>
+
+  <!-- Courbe continue de montée vers le régime permanent -->
+  <path d="M118 418 C164 381 224 322 304 258 C420 165 584 111 900 99" class="curve"/>
+
+  <!-- Construction de t demi -->
+  <line x1="304" y1="258" x2="304" y2="488" class="time-line"/>
+  <circle cx="304" cy="258" r="8" class="estimate"/>
+
+  <!-- Flèche montrant la moitié de la variation totale -->
+  <line x1="154" y1="412" x2="154" y2="264" class="rise"/>
+  <line x1="154" y1="252" x2="154" y2="104" class="rise"/>
+
+  <!-- Repères mathématiques -->
+  <text x="96" y="425" text-anchor="end" class="math math-label">T<tspan baseline-shift="sub" font-size="70%" font-style="normal">0</tspan></text>
+  <text x="96" y="265" text-anchor="end" class="math math-label">T<tspan baseline-shift="sub" font-size="70%" font-style="normal">1/2</tspan></text>
+  <text x="96" y="105" text-anchor="end" class="math math-label">T<tspan baseline-shift="sub" font-size="70%" font-style="normal">∞</tspan></text>
+  <text x="118" y="523" text-anchor="middle" class="math math-label">t = 0</text>
+  <text x="304" y="523" text-anchor="middle" class="math math-label">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">1/2</tspan></text>
+
+  <!-- Explications directement liées aux marques -->
+  <text x="880" y="84" text-anchor="end" class="ui note">régime permanent</text>
+  <text x="750" y="129" class="math math-label">T(t)</text>
+
+  <!-- Titres des axes -->
+  <text x="938" y="523" text-anchor="middle" class="math math-label">t</text>
+</svg>

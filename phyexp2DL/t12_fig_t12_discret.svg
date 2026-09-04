@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <title id="title">Estimation du temps de demi-montée par interpolation linéaire</title>
+  <desc id="desc">Deux mesures successives encadrent la température de demi-montée. Le temps de demi-montée est obtenu par interpolation linéaire entre ces deux points.</desc>
+  <rect width="1000" height="620" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#20242a"/></marker>
+    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.16"/></filter>
+  </defs>
+  <style>
+    .ui{font-family:Inter,Avenir,"Helvetica Neue",Arial,sans-serif;fill:#20242a}.math{font-family:"STIX Two Math","Cambria Math","Times New Roman",serif;fill:#20242a;font-style:italic}.title{font-size:25px;font-weight:600;letter-spacing:-.25px}.axis-label{font-size:20px}.math-label{font-size:21px}.note{font-size:17px;fill:#505861}.axis{stroke:#20242a;stroke-width:1.8;marker-end:url(#arrow)}.frame{fill:#fbfcfd;stroke:#d6dae0;stroke-width:1.2}.curve{fill:none;stroke:#3478c9;stroke-width:2.2;opacity:.48;stroke-linecap:round;stroke-linejoin:round}.sample{fill:#3478c9;stroke:#fff;stroke-width:2.5}.bracket{fill:#fff;stroke:#d97a18;stroke-width:4;filter:url(#halo)}.segment{stroke:#d97a18;stroke-width:4;stroke-linecap:round}.half-line{stroke:#737b86;stroke-width:1.7;stroke-dasharray:7 7}.time-line{stroke:#b33a3a;stroke-width:2;stroke-dasharray:8 7}.estimate{fill:#b33a3a;stroke:#fff;stroke-width:3;filter:url(#halo)}.leader{fill:none;stroke:#737b86;stroke-width:1.3}.interval{fill:#d97a18;opacity:.07}
+  </style>
+  <rect x="118" y="78" width="800" height="430" rx="2" class="frame"/>
+  <rect x="432" y="78" width="120" height="430" class="interval"/>
+  <line x1="118" y1="508" x2="938" y2="508" class="axis"/><line x1="118" y1="508" x2="118" y2="58" class="axis"/>
+  <polyline points="155,451 247,414 339,354 432,289 552,199 668,146 784,116 882,104" class="curve"/>
+  <g class="sample"><circle cx="155" cy="451" r="7"/><circle cx="247" cy="414" r="7"/><circle cx="339" cy="354" r="7"/><circle cx="668" cy="146" r="7"/><circle cx="784" cy="116" r="7"/><circle cx="882" cy="104" r="7"/></g>
+  <line x1="432" y1="289" x2="552" y2="199" class="segment"/><circle cx="432" cy="289" r="10" class="bracket"/><circle cx="552" cy="199" r="10" class="bracket"/>
+  <line x1="118" y1="244" x2="918" y2="244" class="half-line"/><line x1="492" y1="244" x2="492" y2="508" class="time-line"/><circle cx="492" cy="244" r="8" class="estimate"/>
+  <text x="96" y="251" text-anchor="end" class="math math-label">T<tspan baseline-shift="sub" font-size="70%" font-style="normal">1/2</tspan></text>
+  <text x="432" y="541" text-anchor="middle" class="math math-label">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">i</tspan></text>
+  <text x="552" y="541" text-anchor="middle" class="math math-label">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">i+1</tspan></text>
+  <text x="492" y="580" text-anchor="middle" class="math math-label">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">1/2</tspan></text>
+  <path d="M362 316 C386 312 407 301 421 293" class="leader"/><text x="352" y="322" text-anchor="end" class="ui note">point juste avant</text>
+  <path d="M675 175 C630 176 592 185 564 196" class="leader"/><text x="685" y="181" text-anchor="start" class="ui note">point juste après</text>
+  <text x="503" y="268" text-anchor="start" class="ui note">valeur interpolée</text>
+  <text x="938" y="541" text-anchor="middle" class="math math-label">t</text>
+</svg>
