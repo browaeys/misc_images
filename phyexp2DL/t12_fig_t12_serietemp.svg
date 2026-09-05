@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" role="img" aria-labelledby="title desc">
+  <title id="title">Échantillonnage régulier d’une série temporelle</title>
+  <desc id="desc">Les instants t zéro, t un, t deux, puis t i et t i plus un sont régulièrement espacés d’un pas delta t. L’instant t i est égal à t zéro plus i fois delta t.</desc>
+  <rect width="1000" height="330" fill="#fff"/>
+  <defs>
+    <marker id="axis-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#20242a"/></marker>
+    <marker id="step-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#d97a18"/></marker>
+    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000" flood-opacity=".16"/></filter>
+  </defs>
+  <style>
+    .math{font-family:"STIX Two Math","Cambria Math","Times New Roman",serif;fill:#20242a;font-style:italic}.formula{font-size:29px}.label{font-size:22px}.axis{stroke:#20242a;stroke-width:2}.axis-end{stroke:#20242a;stroke-width:2;marker-end:url(#axis-arrow)}.axis-gap{stroke:#737b86;stroke-width:2;stroke-dasharray:3 9;stroke-linecap:round}.tick{stroke:#737b86;stroke-width:1.5}.sample{fill:#3478c9;stroke:#fff;stroke-width:3;filter:url(#halo)}.step{stroke:#d97a18;stroke-width:1.8;marker-start:url(#step-arrow);marker-end:url(#step-arrow)}
+  </style>
+
+  <text x="500" y="62" text-anchor="middle" class="math formula">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">i</tspan> = t<tspan baseline-shift="sub" font-size="70%" font-style="normal">0</tspan> + i Δt</text>
+
+  <line x1="90" y1="180" x2="300" y2="180" class="axis"/>
+  <line x1="300" y1="180" x2="530" y2="180" class="axis-gap"/>
+  <line x1="530" y1="180" x2="820" y2="180" class="axis"/>
+  <line x1="820" y1="180" x2="890" y2="180" class="axis-gap"/>
+  <line x1="890" y1="180" x2="935" y2="180" class="axis-end"/>
+
+  <g class="tick">
+    <line x1="150" y1="166" x2="150" y2="194"/>
+    <line x1="280" y1="166" x2="280" y2="194"/>
+    <line x1="540" y1="166" x2="540" y2="194"/>
+    <line x1="670" y1="166" x2="670" y2="194"/>
+    <line x1="800" y1="166" x2="800" y2="194"/>
+  </g>
+
+  <g class="sample">
+    <circle cx="150" cy="180" r="9"/>
+    <circle cx="280" cy="180" r="9"/>
+    <circle cx="540" cy="180" r="9"/>
+    <circle cx="670" cy="180" r="9"/>
+    <circle cx="800" cy="180" r="9"/>
+  </g>
+
+  <line x1="160" y1="128" x2="270" y2="128" class="step"/>
+  <text x="215" y="112" text-anchor="middle" class="math label">Δt</text>
+  <line x1="550" y1="128" x2="660" y2="128" class="step"/>
+  <text x="605" y="112" text-anchor="middle" class="math label">Δt</text>
+  <line x1="680" y1="128" x2="790" y2="128" class="step"/>
+  <text x="735" y="112" text-anchor="middle" class="math label">Δt</text>
+
+  <text x="150" y="232" text-anchor="middle" class="math label">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">0</tspan></text>
+  <text x="280" y="232" text-anchor="middle" class="math label">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">1</tspan></text>
+  <text x="540" y="232" text-anchor="middle" class="math label">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">i−1</tspan></text>
+  <text x="670" y="232" text-anchor="middle" class="math label">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">i</tspan></text>
+  <text x="800" y="232" text-anchor="middle" class="math label">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">i+1</tspan></text>
+  <text x="936" y="222" text-anchor="middle" class="math label">t</text>
+</svg>
