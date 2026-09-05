@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="490" viewBox="0 0 560 245">
+<title>Schéma avec alimentation 12 V continu</title>
+<desc>Reproduction vectorielle du schéma fourni. Le voltmètre situé à droite est remplacé par une source de tension continue de 12 V.</desc>
+<defs>
+ <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M-1 1L1-1M0 6L6 0M5 7L7 5" fill="none" stroke="#777" stroke-width="1.2"/></pattern>
+ <marker id="arrow" viewBox="0 0 10 8" refX="1" refY="4" markerWidth="10" markerHeight="8" orient="auto-start-reverse"><path d="M10 0L0 4L10 8L7 4Z" fill="#292929"/></marker>
+</defs>
+<rect width="560" height="245" fill="white"/>
+<g fill="none" stroke="#292929" stroke-width="1.25" stroke-linejoin="round">
+ <path d="M71 98H390V113H71Z" fill="url(#hatch)"/>
+ <path d="M71 183H390V198H71Z" fill="url(#hatch)"/>
+ <path d="M71 113H390V183H71Z" fill="#babdbd"/>
+ <path d="M57 113H71V183H57Z" fill="#929595"/>
+ <path d="M390 141H398V155H390Z" fill="#929595"/>
+ <path d="M344 141H390V155H344Z" stroke-dasharray="2.5 2.5"/>
+ <path d="M57 127C44 127 46 119 39 120S34 135 26 133S13 125 2 128" marker-end="url(#arrow)"/>
+ <path d="M57 148C44 148 46 140 39 141S34 156 26 154S13 146 2 149" marker-end="url(#arrow)"/>
+ <path d="M57 169C44 169 46 161 39 162S34 177 26 175S13 167 2 170" marker-end="url(#arrow)"/>
+ <path d="M398 145C414 139 408 120 433 120H454C477 120 486 130 486 138"/>
+ <path d="M398 151C414 157 408 177 433 177H454C477 177 486 166 486 159"/>
+ <circle cx="486" cy="148.5" r="11" fill="white"/>
+ <path d="M482 144H490M486 140V148M482 153H490" stroke-width="1"/>
+ <path d="M425 205H31"/>
+ <path d="M30 205L40 201L37 205L40 209Z" fill="#292929" stroke="none"/>
+ <path d="M149 201V209M230.5 201V209M312 201V209"/>
+ <path d="M390 199V209"/>
+</g>
+<g font-family="Times New Roman, Times, serif" font-size="15" fill="#222">
+ <text x="141" y="18">T<tspan baseline-shift="sub" font-size="10">3</tspan></text>
+ <text x="222" y="18">T<tspan baseline-shift="sub" font-size="10">2</tspan></text>
+ <text x="304" y="18">T<tspan baseline-shift="sub" font-size="10">1</tspan></text>
+ <text x="60" y="159">3</text><text x="89" y="177">1</text>
+ <text x="379" y="153">2</text><text x="233" y="195">5</text>
+ <text x="135" y="153">4</text><text x="216" y="153">4</text><text x="298" y="153">4</text>
+ <text x="42" y="220">x</text>
+ <text x="145" y="220">x<tspan baseline-shift="sub" font-size="10">3</tspan></text>
+ <text x="227" y="220">x<tspan baseline-shift="sub" font-size="10">2</tspan></text>
+ <text x="309" y="220">x<tspan baseline-shift="sub" font-size="10">1</tspan></text>
+ <text x="386" y="220">0</text>
+ <text x="486" y="93" text-anchor="middle" font-size="17">12 V</text>
+ <text x="486" y="110" text-anchor="middle" font-size="14">continu</text>
+</g>
+<g stroke="#292929" stroke-width="1.2" fill="white">
+ <g id="probe"><path d="M142 24V35M155 24V35" stroke-width="2.3"/><path d="M138 35H159V49H138Z"/><path d="M141 49L149 70L157 49"/><path d="M149 70V113"/><path d="M149 113V148" stroke-dasharray="3 2"/><circle cx="149" cy="148" r="2.9" fill="#292929"/></g>
+ <use href="#probe" transform="translate(81.5 0)"/>
+ <use href="#probe" transform="translate(163 0)"/>
+</g>
+</svg>
