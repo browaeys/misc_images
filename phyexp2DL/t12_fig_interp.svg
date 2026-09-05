@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" role="img" aria-labelledby="title desc">
+  <title id="title">Principe de la fonction numpy interp</title>
+  <desc id="desc">Les tableaux xp et fp définissent plusieurs points reliés par des segments. Les valeurs fp sont reportées sur l’axe vertical et les valeurs xp sur l’axe horizontal. Pour une abscisse x comprise entre xp indice i et xp indice i plus un, numpy interp calcule y sur le segment correspondant.</desc>
+  <rect width="1000" height="640" fill="#fff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#20242a"/></marker>
+    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000" flood-opacity=".16"/></filter>
+  </defs>
+  <style>
+    .ui{font-family:Inter,Avenir,"Helvetica Neue",Arial,sans-serif;fill:#20242a}.math{font-family:"STIX Two Math","Cambria Math","Times New Roman",serif;fill:#20242a;font-style:italic}.math-label{font-size:19px}.note{font-size:17px;fill:#505861}.code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:18px;fill:#20242a}.axis{stroke:#20242a;stroke-width:1.8;marker-end:url(#arrow)}.frame{fill:#fbfcfd;stroke:#d6dae0;stroke-width:1.2}.piecewise{fill:none;stroke:#3478c9;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}.local{stroke:#d97a18;stroke-width:4.5;stroke-linecap:round}.known-guide{stroke:#b8bec7;stroke-width:1.15;stroke-dasharray:4 7}.interp-guide{stroke:#b33a3a;stroke-width:1.8;stroke-dasharray:8 7}.known{fill:#3478c9;stroke:#fff;stroke-width:2.8;filter:url(#halo)}.bracket{fill:#fff;stroke:#d97a18;stroke-width:4;filter:url(#halo)}.interpolated{fill:#b33a3a;stroke:#fff;stroke-width:3;filter:url(#halo)}.leader{fill:none;stroke:#737b86;stroke-width:1.3}.tick{stroke:#737b86;stroke-width:1.3}
+  </style>
+  <rect x="118" y="58" width="800" height="430" rx="2" class="frame"/>
+  <line x1="118" y1="488" x2="938" y2="488" class="axis"/>
+  <line x1="118" y1="488" x2="118" y2="38" class="axis"/>
+  <g class="known-guide">
+    <line x1="175" y1="445" x2="175" y2="488"/><line x1="118" y1="445" x2="175" y2="445"/>
+    <line x1="265" y1="400" x2="265" y2="488"/><line x1="118" y1="400" x2="265" y2="400"/>
+    <line x1="460" y1="310" x2="460" y2="488"/><line x1="118" y1="310" x2="460" y2="310"/>
+    <line x1="570" y1="205" x2="570" y2="488"/><line x1="118" y1="205" x2="570" y2="205"/>
+    <line x1="665" y1="360" x2="665" y2="488"/><line x1="118" y1="360" x2="665" y2="360"/>
+    <line x1="805" y1="155" x2="805" y2="488"/><line x1="118" y1="155" x2="805" y2="155"/>
+    <line x1="875" y1="100" x2="875" y2="488"/><line x1="118" y1="100" x2="875" y2="100"/>
+  </g>
+  <polyline points="175,445 265,400 460,310 570,205 665,360 805,155 875,100" class="piecewise"/>
+  <line x1="460" y1="310" x2="570" y2="205" class="local"/>
+  <g class="known">
+    <circle cx="175" cy="445" r="8"/><circle cx="265" cy="400" r="8"/><circle cx="665" cy="360" r="8"/>
+    <circle cx="805" cy="155" r="8"/><circle cx="875" cy="100" r="8"/>
+  </g>
+  <circle cx="460" cy="310" r="10" class="bracket"/><circle cx="570" cy="205" r="10" class="bracket"/>
+  <line x1="515" y1="257.5" x2="515" y2="488" class="interp-guide"/>
+  <line x1="118" y1="257.5" x2="515" y2="257.5" class="interp-guide"/>
+  <circle cx="515" cy="257.5" r="9" class="interpolated"/>
+  <g class="tick">
+    <line x1="175" y1="488" x2="175" y2="496"/><line x1="265" y1="488" x2="265" y2="496"/>
+    <line x1="460" y1="488" x2="460" y2="496"/><line x1="515" y1="488" x2="515" y2="496"/>
+    <line x1="570" y1="488" x2="570" y2="496"/><line x1="665" y1="488" x2="665" y2="496"/>
+    <line x1="805" y1="488" x2="805" y2="496"/><line x1="875" y1="488" x2="875" y2="496"/>
+    <line x1="110" y1="445" x2="118" y2="445"/><line x1="110" y1="400" x2="118" y2="400"/>
+    <line x1="110" y1="360" x2="118" y2="360"/><line x1="110" y1="310" x2="118" y2="310"/>
+    <line x1="110" y1="257.5" x2="118" y2="257.5"/><line x1="110" y1="205" x2="118" y2="205"/>
+    <line x1="110" y1="155" x2="118" y2="155"/><line x1="110" y1="100" x2="118" y2="100"/>
+  </g>
+  <text x="175" y="525" text-anchor="middle" class="math math-label">xp<tspan baseline-shift="sub" font-size="70%" font-style="normal">1</tspan></text>
+  <text x="265" y="525" text-anchor="middle" class="math math-label">xp<tspan baseline-shift="sub" font-size="70%" font-style="normal">2</tspan></text>
+  <text x="360" y="525" text-anchor="middle" class="ui note">…</text>
+  <text x="460" y="525" text-anchor="middle" class="math math-label">xp<tspan baseline-shift="sub" font-size="70%" font-style="normal">i</tspan></text>
+  <text x="515" y="525" text-anchor="middle" class="math math-label" fill="#b33a3a">x</text>
+  <text x="570" y="525" text-anchor="middle" class="math math-label">xp<tspan baseline-shift="sub" font-size="70%" font-style="normal">i+1</tspan></text>
+  <text x="665" y="525" text-anchor="middle" class="math math-label">xp<tspan baseline-shift="sub" font-size="70%" font-style="normal">i+2</tspan></text>
+  <text x="735" y="525" text-anchor="middle" class="ui note">…</text>
+  <text x="805" y="525" text-anchor="middle" class="math math-label">xp<tspan baseline-shift="sub" font-size="70%" font-style="normal">n−1</tspan></text>
+  <text x="875" y="525" text-anchor="middle" class="math math-label">xp<tspan baseline-shift="sub" font-size="70%" font-style="normal">n</tspan></text>
+  <text x="96" y="452" text-anchor="end" class="math math-label">fp<tspan baseline-shift="sub" font-size="70%" font-style="normal">1</tspan></text>
+  <text x="96" y="407" text-anchor="end" class="math math-label">fp<tspan baseline-shift="sub" font-size="70%" font-style="normal">2</tspan></text>
+  <text x="96" y="367" text-anchor="end" class="math math-label">fp<tspan baseline-shift="sub" font-size="70%" font-style="normal">i+2</tspan></text>
+  <text x="96" y="317" text-anchor="end" class="math math-label">fp<tspan baseline-shift="sub" font-size="70%" font-style="normal">i</tspan></text>
+  <text x="96" y="264" text-anchor="end" class="math math-label" fill="#b33a3a">y</text>
+  <text x="96" y="212" text-anchor="end" class="math math-label">fp<tspan baseline-shift="sub" font-size="70%" font-style="normal">i+1</tspan></text>
+  <text x="96" y="162" text-anchor="end" class="math math-label">fp<tspan baseline-shift="sub" font-size="70%" font-style="normal">n−1</tspan></text>
+  <text x="96" y="107" text-anchor="end" class="math math-label">fp<tspan baseline-shift="sub" font-size="70%" font-style="normal">n</tspan></text>
+  <path d="M566 263 C550 261 533 259 523 258" class="leader"/>
+  <text x="575" y="270" class="ui note">valeur interpolée</text>
+  <text x="540" y="590" text-anchor="middle" class="code">np.interp(x, xp, fp)  →  y</text>
+  <text x="938" y="525" text-anchor="middle" class="math math-label">xp</text>
+  <text x="92" y="45" text-anchor="middle" class="math math-label">fp</text>
+</svg>
