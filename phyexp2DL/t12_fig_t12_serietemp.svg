@@ -11,8 +11,6 @@
     .math{font-family:"STIX Two Math","Cambria Math","Times New Roman",serif;fill:#20242a;font-style:italic}.formula{font-size:29px}.label{font-size:22px}.axis{stroke:#20242a;stroke-width:2}.axis-end{stroke:#20242a;stroke-width:2;marker-end:url(#axis-arrow)}.axis-gap{stroke:#737b86;stroke-width:2;stroke-dasharray:3 9;stroke-linecap:round}.tick{stroke:#737b86;stroke-width:1.5}.sample{fill:#3478c9;stroke:#fff;stroke-width:3;filter:url(#halo)}.step{stroke:#d97a18;stroke-width:1.8;marker-start:url(#step-arrow);marker-end:url(#step-arrow)}
   </style>
 
-  <text x="500" y="62" text-anchor="middle" class="math formula">t<tspan baseline-shift="sub" font-size="70%" font-style="normal">i</tspan> = t<tspan baseline-shift="sub" font-size="70%" font-style="normal">0</tspan> + i Δt</text>
-
   <line x1="90" y1="180" x2="300" y2="180" class="axis"/>
   <line x1="300" y1="180" x2="530" y2="180" class="axis-gap"/>
   <line x1="530" y1="180" x2="820" y2="180" class="axis"/>
