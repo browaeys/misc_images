@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 430" width="740" height="430" role="img" aria-labelledby="alim-title alim-desc">
+  <title id="alim-title">Caractéristique d’une alimentation stabilisée</title>
+  <desc id="alim-desc">La tension reste égale à U cons jusqu’au courant I cons, puis l’alimentation régule le courant à I cons et la tension diminue.</desc>
+
+  <line x1="60" y1="360" x2="690" y2="360" stroke="#111" stroke-width="1.5"/>
+  <line x1="82" y1="378" x2="82" y2="20" stroke="#111" stroke-width="1.5"/>
+  <path d="M690 360 l-10 -5 l0 10 z" fill="#111"/>
+  <path d="M82 20 l-5 10 l10 0 z" fill="#111"/>
+
+  <line x1="82" y1="95" x2="505" y2="95" stroke="#2563eb" stroke-width="4"/>
+  <line x1="505" y1="95" x2="505" y2="360" stroke="#d97706" stroke-width="4"/>
+  <circle cx="505" cy="95" r="6" fill="#111"/>
+
+  <line x1="505" y1="95" x2="505" y2="360" stroke="#999" stroke-width="1" stroke-dasharray="5 5"/>
+  <line x1="82" y1="95" x2="505" y2="95" stroke="#999" stroke-width="1" stroke-dasharray="5 5"/>
+
+  <g fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="12">
+    <text x="700" y="350" text-anchor="start"><tspan font-style="italic">I</tspan> (A)</text>
+    <text x="72" y="18" text-anchor="end"><tspan font-style="italic">U</tspan> (V)</text>
+    <text x="505" y="385" text-anchor="middle"><tspan font-style="italic">I</tspan><tspan baseline-shift="sub" font-size="10">cons</tspan></text>
+    <text x="70" y="100" text-anchor="end"><tspan font-style="italic">U</tspan><tspan baseline-shift="sub" font-size="10">cons</tspan></text>
+    <text x="280" y="75" text-anchor="middle">Régulation en tension</text>
+    <text x="525" y="225">Régulation en courant</text>
+  </g>
+</svg>
