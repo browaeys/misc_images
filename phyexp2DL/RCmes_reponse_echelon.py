@@ -12,7 +12,7 @@ out = Path(__file__).resolve().parent
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 13})
 fig, axes = plt.subplots(1, 2, figsize=(12, 4.9))
 fig.subplots_adjust(left=.065, right=.975, bottom=.23, top=.82, wspace=.22)
-ink, blue, grey = '#303438', '#1764a0', '#7d8790'
+ink, red, grey = '#000000', '#c42b38', '#7d8790'
 t0, tau = 0., 1.
 for ax, B, C, title in zip(axes, [.25, 1.], [1., .25],
                          ['Charge : $C>B$', 'Décharge : $C<B$']):
@@ -33,12 +33,12 @@ for ax, B, C, title in zip(axes, [.25, 1.], [1., .25],
         ax.axhline(level, color=grey, lw=.8, ls=(0, (2, 4)), alpha=.6)
     ax.plot([t0, t0], [0, 1.06], color=grey, lw=1, ls=(0, (2, 4)))
     # La réponse continue se superpose à l'entrée avant l'échelon.
-    ax.plot([-1.3, t0], [B, B], color=ink, lw=2.7, zorder=3)
+    ax.plot([-1.3, t0], [B, B], color=ink, lw=2.7, ls=':', zorder=4)
     t = np.linspace(t0, 5.5, 700)
     u = C + (B-C)*np.exp(-(t-t0)/tau)
-    ax.plot(t, u, color=ink, lw=2.7, zorder=4)
-    ax.plot([-1.3, t0, t0, 5.5], [B, B, C, C], color=blue,
-            lw=1.9, ls=(0, (6, 4)), zorder=5)
+    ax.plot(t, u, color=ink, lw=2.7, ls=':', zorder=4)
+    ax.plot([-1.3, t0, t0, 5.5], [B, B, C, C], color=red,
+            lw=4, zorder=3)
     ax.scatter([t0], [B], color=ink, s=30, zorder=6)
     # L'annotation souligne la continuité sans masquer les courbes.
     ax.annotate(r'$u(t_0)=B$', xy=(t0, B),
@@ -46,9 +46,9 @@ for ax, B, C, title in zip(axes, [.25, 1.], [1., .25],
                 color=ink, fontsize=13, ha='center',
                 arrowprops=dict(arrowstyle='-', lw=.9, color=grey))
 
-fig.legend([Line2D([], [], color=blue, lw=1.9, ls=(0, (6, 4))),
-            Line2D([], [], color=ink, lw=2.7)],
-           [r'Échelon appliqué $e(t)$', r'Tension du condensateur $u(t)$'],
+fig.legend([Line2D([], [], color=ink, lw=2.7, ls=':'),
+            Line2D([], [], color=red, lw=4)],
+           [r'$u(t)$', r'$e(t)$'],
            loc='lower center', bbox_to_anchor=(.5, .03), ncol=2,
            frameon=False, columnspacing=3)
 for ext in ('svg', 'png'):
