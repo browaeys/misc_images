@@ -724,10 +724,9 @@ z
     </g>
    </g>
    <g id="text_8">
-    <!-- $t_0$ -->
-    <g transform="translate(82.603636 372.681074) scale(0.18 -0.18)">
-     <use xlink:href="#DejaVuSans-57" transform="translate(0 0.78125)"/>
-     <use xlink:href="#DejaVuSans-13" transform="translate(40.166016 -14.218701) scale(0.7)"/>
+    <!-- 0 -->
+    <g transform="translate(84.797386 372.681074) scale(0.18 -0.18)">
+     <use xlink:href="#DejaVuSans-13"/>
     </g>
    </g>
    <g id="PathCollection_1">
