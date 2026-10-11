@@ -20,6 +20,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
+from matplotlib.transforms import Bbox
 import numpy as np
 
 
@@ -140,10 +141,30 @@ def figure():
     return fig
 
 
+def bounding_box_serree(fig):
+    """Encadrer les éléments dessinés, sans les marges des axes invisibles."""
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    # Les points du signal sont à l'intérieur du rectangle de fond : ses
+    # limites couvrent donc aussi les marqueurs. Les textes et les flèches
+    # peuvent dépasser ce rectangle et sont pris en compte séparément.
+    elements = [element for ax in fig.axes
+                for element in [*ax.texts, *ax.lines, *ax.patches]
+                if element.get_visible()]
+    boite = Bbox.union([element.get_window_extent(renderer)
+                        for element in elements])
+    boite = boite.transformed(fig.dpi_scale_trans.inverted())
+    # Un point de marge protège les contours des flèches et des traits.
+    marge = 1 / 72
+    return Bbox.from_extents(boite.x0 - marge, boite.y0 - marge,
+                             boite.x1 + marge, boite.y1 + marge)
+
+
 def main():
     fig = figure()
     fichier = Path(__file__).resolve().with_suffix(".svg")
-    fig.savefig(fichier, metadata={
+    fig.savefig(fichier, bbox_inches=bounding_box_serree(fig), pad_inches=0,
+                metadata={
         "Date": None, "Title": "Encadrement du temps de demi-descente",
         "Description": "Signal bruité : le premier point sous le seuil et "
         "le dernier point au-dessus sont entourés. La borne minimale est "
