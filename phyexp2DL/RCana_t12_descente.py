@@ -106,7 +106,7 @@ def figure_continue():
     ax.text(3.98, U_INF + 0.2, "régime asymptotique", color="#54595e",
             ha="right", va="bottom", fontsize=12)
     ax.text(3.28, U_INF + 0.68, "$u(t)$", fontsize=18)
-    ax.text(T0, -0.26, "$t_0$", ha="center", va="top", fontsize=18)
+    ax.text(T0, -0.26, "0", ha="center", va="top", fontsize=18)
     return fig
 
 
